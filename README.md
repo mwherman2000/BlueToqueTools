@@ -7,6 +7,10 @@ the Blue Toque family of Fully Decentralized Object (FDO) Framework specificatio
 
 ![Blue Toque](images/bluetoquelogo2.jpg)
 
+## BlueToqueTools Tool Kit Contents
+
+- `didlang` Language Command Line Interpreter for DID Identifiers, DID Documents, DID Agents, and DID Objects
+
 ## didlang Language Command Line Interpreter for DID Identifiers, DID Documents, DID Agents, and DID Objects
 
 `didlang` is a new interpreted, command line language for working with DID Identifiers, DID Documents, DID Agents, and DID Objects.
