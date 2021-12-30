@@ -1,0 +1,15 @@
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.csproj.AssemblyReference.cache
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.AssemblyInfoInputs.cache
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.AssemblyInfo.cs
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.csproj.CoreCompileInputs.cache
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\bin\Debug\net6.0\BlueToque.didlang.exe
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\bin\Debug\net6.0\BlueToque.didlang.deps.json
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\bin\Debug\net6.0\BlueToque.didlang.runtimeconfig.json
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\bin\Debug\net6.0\BlueToque.didlang.dll
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\bin\Debug\net6.0\ref\BlueToque.didlang.dll
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\bin\Debug\net6.0\BlueToque.didlang.pdb
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.dll
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\ref\BlueToque.didlang.dll
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.pdb
+C:\Users\mwher\source\repos\BlueToqueTools\BlueToque.didlang\obj\Debug\net6.0\BlueToque.didlang.genruntimeconfig.cache

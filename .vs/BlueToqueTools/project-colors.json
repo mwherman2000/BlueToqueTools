@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7647a451-2c40-44cf-b0db-d452614d03d3": {
+      "ProjectGuid": "7647a451-2c40-44cf-b0db-d452614d03d3",
+      "DisplayName": "BlueToqueTools.didlang",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "4e2b4e22-dc96-4842-bc2d-86d123838e6e": {
+      "ProjectGuid": "4e2b4e22-dc96-4842-bc2d-86d123838e6e",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

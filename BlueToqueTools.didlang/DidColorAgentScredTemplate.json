@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://w3id.org/credentials/v1"
+  ],
+  "name": "BlueToqueTools Color Agent (Structured Credential/Verified Credential)",
+  "comments": [
+    "BlueToqueTools Color Agent Properties",
+    "Verifiable Credential"
+  ],
+  "id": "did:color:bluetoqueagent:interfaces:scred",
+  "type": [
+    "VerifiableCredential",
+    "BlueToqueToolsAgent"
+  ],
+  "issuer": "did:org:bluetoque:01E9CFEA-E36D-4111-AB68-D99AE9D86D51",
+  "issuanceDate": "2007-01-12T00:00:00Z",
+  "expires": "2017-04-22T00:00:00Z",
+  "credentialSubject": {
+    "id": "did:color:bluetoqueagent:interfaces:scred",
+    "claims": {
+      "actions": {
+        "getAgentInterfaces": {
+          "parameters": "none",
+          "returnValue": "did:bluetoqueagent:interfaces:scred"
+        },
+        "getObjectInterfaces": {
+          "parameters": "didIdentifier",
+          "returnValue": "did:object:interfaces:scred"
+        }
+      }
+    },
+    "issued": "12 JAN 2007",
+    "jurisdiction": {
+      "CountryName": "Canada",
+      "CountryAbbreviation": "CAN",
+      "ProvinceStateName": "Sovronia"
+    }
+  },
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2007-01-12T21:19:10Z",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://kms.sovonia.ca/issuers/keys/1",
+    "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
+  }
+}
