@@ -1,0 +1,16 @@
+
+To override the default selector for the Agent service endpoint and/or 
+the Agent interface and interface method ("coercion"), enter:
+
+  *(agentServiceEndpointType^agentServiceEndpointId)*did 
+      - returns the Agent Scred for an alternative Agent service endpoint 
+        in the DID Document.
+  **(agentServiceEndpointType^agentServiceEndpointId)*did 
+      - returns the result of calling the default interface method on 
+        an alternative Agent service endpoint in the DID Document.
+  *(agentInterface^agentInterfaceMethod)**did 
+      - returns the result of calling an alternative interface method 
+        on the default Agent service endpoint.
+  *(agentInterface^agentInterfaceMethod)*(agentServiceEndpointType^agentServiceEndpointId)*did 
+      - returns the result of calling an alternative interface method on an 
+        alternative Agent service endpoint in the DID Document (double coercion).
