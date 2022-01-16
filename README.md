@@ -99,7 +99,7 @@ the `didlang Language` command line interpreter.
 
 ## References
 
-[1] In future versions of `didlang`, the `didlang` Create/Update and Delete command syntax will evolve from:
+[1] Future versions of the `didlang` Create/Update and Delete command syntax will evolve from:
 ```
 ++++did:<method name>:<idstring> Name1="Value1" ...
 ----did:<method name>:<idstring> Name1 ...
