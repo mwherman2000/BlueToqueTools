@@ -9,11 +9,11 @@ the Blue Toque family of Fully Decentralized Object (FDO) Framework specificatio
 
 ## BlueToqueTools Tool Kit Contents
 
-- `didlang` Language Command Line Interpreter for DID Identifiers, DID Documents, DID Agents, and DID Objects version 0.4
+- `didlang` Language Command Line Interpreter for DID Identifiers, DID Documents, DID Agent Clusters, and DID Objects version 0.4
 
-## didlang Language Command Line Interpreter for DID Identifiers, DID Documents, DID Agents, and DID Objects version 0.4
+## didlang Language Command Line Interpreter for DID Identifiers, DID Documents, DID Agent Clusters, and DID Objects version 0.4
 
-`didlang` is a new interpreted, command line language for working with DID Identifiers, DID Documents, DID Agents, and DID Objects.
+`didlang` is a new interpreted, command line language for working with DID Identifiers, DID Documents, DID Agent Clusters, and DID Objects.
 
 ### CRUD Commands
 
@@ -23,16 +23,18 @@ the Blue Toque family of Fully Decentralized Object (FDO) Framework specificatio
 - Enter `!help` to see a list of command shortcuts.
 - Enter `<did>` to verify a DID Identifier (no indirection).
 - Enter `*<did>` to return the DID Document associated with the DID Identifier ("single indirection").
-- Enter `**<did>` to return the Agent Scred (VC) associated with the DID Identifier ("double indirection").
-- Enter `***<did>` to return the Object Scred (VC) associated with the DID Identifier ("triple indirection").
+- Enter `**<did>` to return the DID Agent Scred (Structured Credential) 
+associated with the DID Identifier ("double indirection").
+- Enter `***<did>` to return the DID Object Scred (Structured Credential) 
+associated with the DID Identifier ("triple indirection").
 
 #### Create/Update Commands (Plus Operator)
 
 - Enter `+did:<method name>` to register a new DID Method name - fails if the DID Method name already has been registered.
 - Enter `+did:<method name>:<idstring>` to (re)register a new DID Document with a single (1) default serviceEndpoint 
 (DID Agent) - configured with a default DID Agent implementation as well as pre-deleting the previous DID Document if it already exists.
-- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to (re)register a new DID Document with multiple serviceEndpoints (DID Agents) - each preconfigured with a default DID Agent implementation as well as pre-deleting the previous DID Document if it already exists.
-- Enter `++did:<method name>:<idstring>` to (re)create a new DID Agent (Structured Credential) describing the Agent's interfaces and the interfaces' methods.
+- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to (re)register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the previous DID Document if it already exists.
+- Enter `++did:<method name>:<idstring>` to (re)create a new DID Agent (Structured Credential) describing the DID Agent's interfaces and the interfaces' methods.
 - Enter `+++did:<method name>:<idstring>` to (re)create in DID Storage a new DID Object (Structure Credential) with no properties.
 - Enter `++++did:<method name>:<idstring> Name1="Value1" ...` to add or update one or more named properties from a DID Object[1].
 
@@ -59,11 +61,11 @@ returns result of calling the default interface method on an alternative Agent s
 ```
 *(agentInterface:agentMethod)**did
 ```
-returns the result of calling an alternative interface method on the default Agent service endpoint.
+returns the result of calling an alternative interface method on the default DID Agent Cluster service endpoint.
 ```
 *(agentInterface^agentMethod)*(serviceEndpointType^serviceEndpointId)*did
 ```
-returns the result of calling an alternative interface method on an alternative Agent service endpoint in the DID Document (double coercion).
+returns the result of calling an alternative interface method on an alternative DID Agent Cluster service endpoint in the DID Document (double coercion).
 
 ### Command Shortcuts
 
@@ -93,11 +95,11 @@ the `didlang Language` command line interpreter.
 
 ## Context
 
-![Trusted Digital Web and the Decentralized OSI Model 0.7 – December 28, 2021](/images/TDW-DID%20Method%20Spaces%200.7.png)
+![Trusted Digital Web and the Decentralized (DID) OSI Model](/images/TDW-DID%20Method%20Spaces%200.8.png)
 
 ## References
 
-[1] In future versions of `didlang`, the syntax for Create/Update and Delete commands will evolve from:
+[1] In future versions of `didlang`, the `didlang` Create/Update and Delete command syntax will evolve from:
 ```
 ++++did:<method name>:<idstring> Name1="Value1" ...
 ----did:<method name>:<idstring> Name1 ...
@@ -108,4 +110,4 @@ to also include:
 -***did:<method name>:<idstring> Name1 ...
 ```
 That is, _indirection_ should first be used to Read the DID Document, DID Agent, or DID Object entity
-and then `+` or `-` will then act appropriately on the returned entity.
+and then `+` or `-` will then act appropriately (as defined above) on the returned entity.
