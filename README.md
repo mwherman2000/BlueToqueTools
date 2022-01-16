@@ -31,10 +31,10 @@ associated with the DID Identifier ("triple indirection").
 
 #### Create/Update Commands (Plus Operator)
 
-- Enter `+did:<method name>` to register a new DID Method name - fails if the DID Method name already has been registered.
+- Enter `+did:<method name>` to register a new DID Method name - fails if the DID Method name was registered previously.
 - Enter `+did:<method name>:<idstring>` to (re)register a new DID Document with a single (1) default serviceEndpoint 
-(DID Agent) - configured with a default DID Agent implementation as well as pre-deleting the previous DID Document if it already exists.
-- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to (re)register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the previous DID Document if it already exists.
+(DID Agent) - configured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
+- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to (re)register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
 - Enter `++did:<method name>:<idstring>` to (re)create a new DID Agent (Structured Credential) describing the DID Agent's interfaces and the interfaces' methods.
 - Enter `+++did:<method name>:<idstring>` to (re)create in DID Storage a new DID Object (Structure Credential) with no properties.
 - Enter `++++did:<method name>:<idstring> Name1="Value1" ...` to add or update one or more named properties from a DID Object[1].
@@ -100,7 +100,7 @@ the `didlang Language` command line interpreter.
 
 ## References
 
-[1] Future versions of the `didlang` Create/Update and Delete command syntax will evolve from:
+[1] Future versions of the `didlang` Create/Update and Delete command language syntax will evolve from:
 ```
 ++++did:<method name>:<idstring> Name1="Value1" ...
 ----did:<method name>:<idstring> Name1 ...
@@ -110,5 +110,5 @@ to also include:
 +***did:<method name>:<idstring> Name1="Value1" ...
 -***did:<method name>:<idstring> Name1 ...
 ```
-That is, _indirection_ should first be used to Read the DID Document, DID Agent, or DID Object entity
-and then `+` or `-` will then act appropriately (as defined above) on the returned entity.
+That is, _indirection_ will be used to first read the DID Document, DID Agent, or DID Object entity;
+then the `+` or `-` ooperator will then act appropriately on the returned entity (as defined above).
