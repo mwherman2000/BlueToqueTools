@@ -16,12 +16,15 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 
 `didlang` is a new interpreted, command line language for working with DID Identifiers, DID Documents, DID Agent Clusters, and DID Objects.
 
-### CRUD Commands
+### Commands
+
+#### Help Commands
+
+- Enter `help` to display the list of top-level commands.
+- Enter `!help` to display a list of command shortcuts.
 
 #### Read Commands (Indirection Operator)
 
-- Enter `help` to redisplay this list of commands.
-- Enter `!help` to see a list of command shortcuts.
 - Enter `<did>` to verify a DID Identifier (no indirection).
 - Enter `*<did>` to return the DID Document associated with the DID Identifier ("single indirection").
 - Enter `**<did>` to return the DID Agent Scred (Structured Credential) 
@@ -43,8 +46,8 @@ associated with the DID Identifier ("triple indirection").
 
 - Enter `-did:<method name>` to deregister a new DID Method name - fails if the DID Method namespace contains existing
 DID Documents, DID Agents, or DID Objects.
-- Enter `-did:<method name>:<idstring>` to delete an existing DID Document and an associated DID Agent and DID Object (Structured Credentials), if they exist
-- Enter `--did:<method name>:<idstring>` to delete an existing DID Agent (Structured Credential).
+- Enter `-did:<method name>:<idstring>` to delete an existing DID Document and an associated DID Agent and DID Object (Structured Credentials) (aka DID Chain), if they exist
+- Enter `--did:<method name>:<idstring>` to delete an existing DID Agent (Structured Credential) and associated DID Object, if they exist.
 - Enter `---did:<method name>:<idstring>` to delete from DID Storage an existing DID Object (Structure Credential) - including all contained properties.
 - Enter `----did:<method name>:<idstring> Name1 ...` to delete one or more named properties from an existing DID Object[1]. 
 
@@ -80,8 +83,6 @@ returns the result of calling an alternative interface method on an alternative 
 - !green  = ***did:example:green
 - !blue   = ***did:example:blue
 - !colors = display a list of the registered did:color DID Objects
-- !help   = redisplay this list of command shortcuts
-- help    = display a list of top-level commands
 ```
 
 ### Screenshot
