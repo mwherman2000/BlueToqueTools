@@ -18,7 +18,7 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 
 ### CRUD Commands
 
-#### Read Commands (Indirection) Operator)
+#### Read Commands (Indirection Operator)
 
 - Enter `help` to redisplay this list of commands.
 - Enter `!help` to see a list of command shortcuts.
