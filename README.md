@@ -1,13 +1,13 @@
-﻿# BlueToqueTools DID Toolkit
+﻿# BlueToque Tools DID Toolkit
 Trusted Digital Web (TDW) Project, Hyperonomy Digital Identity Lab, Parallelspace Corporation
 
-BlueToqueTools is a collection of software utilities, prototype apps, proof-of-concept (PoC) apps, and demonstration apps used
+BlueToque Tools is a collection of software utilities, prototype apps, proof-of-concept (PoC) apps, and demonstration apps used
 to support, validate, and/or demonstrate key features of
-the Blue Toque family of Fully Decentralized Object (FDO) Framework specifications.
+the BlueToque family of Fully Decentralized Object (FDO) Framework specifications.
 
 ![Blue Toque](images/bluetoquelogo2.jpg)
 
-## BlueToqueTools Tool Kit Contents
+## BlueToque Tools Tool Kit Contents
 
 - `didlang` Language Command Line Interpreter for DID Identifiers, DID Documents, DID Agent Clusters, and DID Objects version 0.4
 
