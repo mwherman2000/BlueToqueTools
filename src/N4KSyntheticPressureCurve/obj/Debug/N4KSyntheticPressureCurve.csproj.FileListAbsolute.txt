@@ -1,0 +1,16 @@
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\bin\Debug\N4KSyntheticPressureCurve.exe.config
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\bin\Debug\N4KSyntheticPressureCurve.exe
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\bin\Debug\N4KSyntheticPressureCurve.pdb
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.csproj.AssemblyReference.cache
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.csproj.SuggestedBindingRedirects.cache
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.csproj.CoreCompileInputs.cache
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.exe
+C:\TDW\repos\N4KSyntheticPressureCurve\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.pdb
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\bin\Debug\N4KSyntheticPressureCurve.exe.config
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\bin\Debug\N4KSyntheticPressureCurve.exe
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\bin\Debug\N4KSyntheticPressureCurve.pdb
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.csproj.AssemblyReference.cache
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.csproj.SuggestedBindingRedirects.cache
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.csproj.CoreCompileInputs.cache
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.exe
+C:\TDW\repos\BlueToqueTools\src\N4KSyntheticPressureCurve\obj\Debug\N4KSyntheticPressureCurve.pdb
