@@ -16,6 +16,10 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 
 `didlang` is a new interpreted, command line language for working with DID Method Namespaces, DID Identifiers, DID Documents, DID Agent Service Endpoints, DID Agent Servers, DID Agent Clusters, and DID Objects (the _7 DIDs_).
 
+### didlang Conceptual Model
+
+![didlang Conceptual Model](images/didlang%20Conceptual%20Model%200.1.png)
+
 ### Commands
 
 #### Help Commands
@@ -23,7 +27,7 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 - Enter `help` to display the list of top-level commands.
 - Enter `!help` to display a list of command shortcuts.
 
-#### Read Commands (Indirection Operator)
+#### Read Commands (* Indirection Operator)
 
 - Enter `<did>` to verify a DID Identifier (no indirection).
 - Enter `*<did>` to return the DID Document associated with the DID Identifier ("single indirection").
@@ -34,17 +38,22 @@ associated with the DID Identifier ("triple indirection").
 - Enter `***<did> "Name1" ...` to return selected property values from the DID Object Scred (Structured Credential) 
 associated with the DID Identifier ("triple indirection").
 
-#### Create/Update Commands (Plus Operator)
+#### Create Commands (+ Add Operator)
 
 - Enter `+did:<method name>` to register a new DID Method name - fails if the DID Method name was registered previously.
-- Enter `+did:<method name>:<idstring>` to (re)register a new DID Document with a single (1) default serviceEndpoint 
+- Enter `+did:<method name>:<idstring>` to register a DID Document with a single (1) default serviceEndpoint 
 (DID Agent) - configured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
-- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to (re)register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
-- Enter `++did:<method name>:<idstring>` to (re)create a new DID Agent (Structured Credential) describing the DID Agent's interfaces and the interfaces' methods.
-- Enter `+++did:<method name>:<idstring>` to (re)create in DID Storage a new DID Object (Structure Credential) with no properties.
-- Enter `++++did:<method name>:<idstring> "Name1"="Value1" ...` to add or update one or more named properties from a DID Object[1].
+- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
+- Enter `++did:<method name>:<idstring>` to create a new DID Agent (Structured Credential) describing the DID Agent's interfaces and the interfaces' methods.
+- Enter `+++did:<method name>:<idstring>` to create a new DID Object (Structure Credential) in DID Storage with no properties (names/values).
+- Enter `++++did:<method name>:<idstring> "Name1"="Value1" ...` to add one or more named properties to a DID Object[1].
 
-#### Delete Commands (Minus Operator)
+#### Update Commands (^ Update (Merge) Operator)
+
+- Enter `^did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to update DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
+- Enter `^^^^did:<method name>:<idstring> "Name1"="Value1" ...` to update one or more named properties from a DID Object[1].
+
+#### Delete Commands (- Remove Operator)
 
 - Enter `-did:<method name>` to deregister a new DID Method name - fails if the DID Method namespace contains existing
 DID Documents, DID Agents, or DID Objects.
