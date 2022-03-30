@@ -18,7 +18,7 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 
 ### didlang Conceptual Model
 
-![didlang Conceptual Model](images/didlang%20Conceptual%20Model%200.1.png)
+![didlang Conceptual Model](images/didlang%20Conceptual%20Model%200.2.png)
 
 ### Commands
 
@@ -26,6 +26,20 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 
 - Enter `help` to display the list of top-level commands.
 - Enter `!help` to display a list of command shortcuts.
+
+#### Create Commands (+ Add Operator)
+
+- Enter `+did:<method name>` to register a new DID Method name - fails if the DID Method name was registered previously.
+- Enter `+did:<method name>:<idstring>` to register a DID Document with a single (1) default serviceEndpoint 
+(DID Agent) - configured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
+- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
+- Enter `++did:<method name>:<idstring>` to create a new DID Agent (Structured Credential) describing the DID Agent's interfaces and the interfaces' methods.
+- Enter `+++did:<method name>:<idstring>` to create a new DID Object (Structure Credential) in DID Storage with no properties (names/values).
+- Enter `++++did:<method name>:<idstring> "Name1"="Value1" ...` to add one or more named properties to a DID Object[1].
+
+#### Verify Commands (No Operator)
+
+- Enter `<did>` to verify a DID Identifier (no indirection).
 
 #### Read Commands (* Indirection Operator)
 
@@ -37,16 +51,6 @@ associated with the DID Identifier ("double indirection").
 associated with the DID Identifier ("triple indirection").
 - Enter `***<did> "Name1" ...` to return selected property values from the DID Object Scred (Structured Credential) 
 associated with the DID Identifier ("triple indirection").
-
-#### Create Commands (+ Add Operator)
-
-- Enter `+did:<method name>` to register a new DID Method name - fails if the DID Method name was registered previously.
-- Enter `+did:<method name>:<idstring>` to register a DID Document with a single (1) default serviceEndpoint 
-(DID Agent) - configured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
-- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
-- Enter `++did:<method name>:<idstring>` to create a new DID Agent (Structured Credential) describing the DID Agent's interfaces and the interfaces' methods.
-- Enter `+++did:<method name>:<idstring>` to create a new DID Object (Structure Credential) in DID Storage with no properties (names/values).
-- Enter `++++did:<method name>:<idstring> "Name1"="Value1" ...` to add one or more named properties to a DID Object[1].
 
 #### Update Commands (^ Update (Merge) Operator)
 
