@@ -30,41 +30,450 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 #### Create Commands (+ Add Operator)
 
 - Enter `+did:<method name>` to register a new DID Method name - fails if the DID Method name was registered previously.
-- Enter `+did:<method name>:<idstring>` to register a DID Document with a single (1) default serviceEndpoint 
-(DID Agent) - configured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
-- Enter `+did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to register a new DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
-- Enter `++did:<method name>:<idstring>` to create a new DID Agent (Structured Credential) describing the DID Agent's interfaces and the interfaces' methods.
-- Enter `+++did:<method name>:<idstring>` to create a new DID Object (Structure Credential) in DID Storage with no properties (names/values).
-- Enter `++++did:<method name>:<idstring> "Name1"="Value1" ...` to add one or more named properties to a DID Object[1].
+- Enter `+did:<method name>:<idstring>` to register a DID Document with a (default) `Bluetoque.Compute.Agent` serviceEndpoint url,
+a (default) `Bluetoque.Storage.Agent` serviceEndpoint url, and a (default) `Bluetoque.Verify.Agent` serviceEndpoint url - fails if a DID Document is already asssociated with this DID Identifier. Optionally, a payload consisting of a fully formed and complete DID Document with a matching DID Identifier can be submitted with this Create command.
+- Enter `++did:<method name>:<idstring> type="<type>"` to deploy a new DID Agent onto an DID Agent Host(s) with a serviceEndPoint url which a matching type - fails if the DID Agent has previously been deployed
+- Enter `+++did:<method name>:<idstring> "[Name1"="Value1" ...]` to create a new DID Object (Structure Credential) (associated with the DID Identifier) on a DID Storage Agent with an optional set of claims (name-value pairs) - fails if the DID Object already exists.
 
 #### Verify Commands (No Operator)
 
-- Enter `<did>` to verify a DID Identifier (no indirection).
+- Enter `<did>` to verify a DID Identifier (no indirection or other operator).
 
 #### Read Commands (* Indirection Operator)
 
-- Enter `<did>` to verify a DID Identifier (no indirection).
 - Enter `*<did>` to return the DID Document associated with the DID Identifier ("single indirection").
-- Enter `**<did>` to return the DID Agent Scred (Structured Credential) 
+- Enter `**<did>` to returns a Swagger API definition (or equivalent) for the DID Agent with a matching type 
 associated with the DID Identifier ("double indirection").
-- Enter `***<did>` to return the DID Object Scred (Structured Credential) 
-associated with the DID Identifier ("triple indirection").
-- Enter `***<did> "Name1" ...` to return selected property values from the DID Object Scred (Structured Credential) 
-associated with the DID Identifier ("triple indirection").
+- Enter `***<did>` to return the value of the DID Object  
+associated with the DID Identifier as a Structured Credential ("triple indirection").
+- Enter `***<did> "Name1" ...` to return selected property values (claims) from the DID Object associated with the DID Identifier as a Structured Credential ("triple indirection").
+
+#### Example 1:  Swagger API definition (or equivalent) of a the DID Agent: Swagger
+```json
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "defaultTitle",
+    "description": "defaultDescription",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8081"
+    }
+  ],
+  "paths": {
+    "/SendNFEEnvelopeToStorage/": {
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendNFEEnvelopeToStorage_body"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200"
+                },
+                "examples": {
+                  "0": {
+                    "value": "{\"rc\":0}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8081"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:8081"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "SendNFEEnvelopeToStorage_sealedEnvelope_envelope_label": {
+        "type": "object",
+        "properties": {
+          "encryptionFlag": {
+            "type": "string"
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "credtype": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "trustLevel": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "example": null
+      },
+      "SendNFEEnvelopeToStorage_sealedEnvelope_envelope_content_credentialsubjectclaims": {
+        "type": "object",
+        "properties": {
+          "n0samples": {
+            "type": "integer"
+          },
+          "tod5finish": {
+            "type": "string"
+          },
+          "d4recoverytime": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "d3s": {
+            "type": "integer"
+          },
+          "n2samples": {
+            "type": "integer"
+          },
+          "kissCompass": {
+            "type": "integer"
+          },
+          "n1samples": {
+            "type": "integer"
+          },
+          "n3samples": {
+            "type": "integer"
+          },
+          "n4samples": {
+            "type": "integer"
+          },
+          "t3ms": {
+            "type": "integer"
+          },
+          "t5ms": {
+            "type": "integer"
+          },
+          "t3s": {
+            "type": "integer"
+          },
+          "t1ms": {
+            "type": "integer"
+          },
+          "d5ms": {
+            "type": "integer"
+          },
+          "d3ms": {
+            "type": "integer"
+          },
+          "d1ms": {
+            "type": "integer"
+          },
+          "d4s": {
+            "type": "integer"
+          },
+          "tod1press": {
+            "type": "string"
+          },
+          "d0approachtime": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "tod3release": {
+            "type": "string"
+          },
+          "d4recoverycurve": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "t4s": {
+            "type": "integer"
+          },
+          "t0s": {
+            "type": "integer"
+          },
+          "tod2sustain": {
+            "type": "string"
+          },
+          "medians": {
+            "type": "integer"
+          },
+          "tod4recovery": {
+            "type": "string"
+          },
+          "d5s": {
+            "type": "integer"
+          },
+          "d2sustaintime": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "mood": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "tongue": {
+            "type": "boolean"
+          },
+          "d1s": {
+            "type": "integer"
+          },
+          "d3releasecurve": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "d3releasepng64": {
+            "type": "string"
+          },
+          "t2ms": {
+            "type": "integer"
+          },
+          "d2sustainpng64": {
+            "type": "string"
+          },
+          "t4ms": {
+            "type": "integer"
+          },
+          "t5s": {
+            "type": "integer"
+          },
+          "actualbodypart": {
+            "type": "string"
+          },
+          "d2sustaincurve": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "t0ms": {
+            "type": "integer"
+          },
+          "t1s": {
+            "type": "integer"
+          },
+          "d4ms": {
+            "type": "integer"
+          },
+          "timezoneid": {
+            "type": "string"
+          },
+          "d4recoverypng64": {
+            "type": "string"
+          },
+          "d2ms": {
+            "type": "integer"
+          },
+          "d1presstime": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "kissType": {
+            "type": "string"
+          },
+          "coverage": {
+            "type": "integer"
+          },
+          "d2s": {
+            "type": "integer"
+          },
+          "d1presscurve": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "peak": {
+            "type": "integer"
+          },
+          "targetbodypart": {
+            "type": "string"
+          },
+          "d0approachcurve": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "t2s": {
+            "type": "integer"
+          },
+          "d1presspng64": {
+            "type": "string"
+          },
+          "d0approachpng64": {
+            "type": "string"
+          },
+          "tod0approach": {
+            "type": "string"
+          },
+          "d3releasetime": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "medianms": {
+            "type": "integer"
+          }
+        },
+        "example": null
+      },
+      "SendNFEEnvelopeToStorage_sealedEnvelope_envelope_content": {
+        "type": "object",
+        "properties": {
+          "credentialsubjectclaims": {
+            "$ref": "#/components/schemas/SendNFEEnvelopeToStorage_sealedEnvelope_envelope_content_credentialsubjectclaims"
+          },
+          "context": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "credentialsubjectudid": {
+            "type": "string"
+          },
+          "udid": {
+            "type": "string"
+          }
+        },
+        "example": null
+      },
+      "SendNFEEnvelopeToStorage_sealedEnvelope_envelope": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "$ref": "#/components/schemas/SendNFEEnvelopeToStorage_sealedEnvelope_envelope_label"
+          },
+          "udid": {
+            "type": "string"
+          },
+          "content": {
+            "$ref": "#/components/schemas/SendNFEEnvelopeToStorage_sealedEnvelope_envelope_content"
+          }
+        },
+        "example": null
+      },
+      "SendNFEEnvelopeToStorage_sealedEnvelope_proof": {
+        "type": "object",
+        "properties": {
+          "hashedThumbprint64": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "example": null
+      },
+      "SendNFEEnvelopeToStorage_sealedEnvelope": {
+        "type": "object",
+        "properties": {
+          "envelope": {
+            "$ref": "#/components/schemas/SendNFEEnvelopeToStorage_sealedEnvelope_envelope"
+          },
+          "proof": {
+            "$ref": "#/components/schemas/SendNFEEnvelopeToStorage_sealedEnvelope_proof"
+          }
+        },
+        "example": null
+      },
+      "SendNFEEnvelopeToStorage_body": {
+        "type": "object",
+        "properties": {
+          "sealedEnvelope": {
+            "$ref": "#/components/schemas/SendNFEEnvelopeToStorage_sealedEnvelope"
+          }
+        }
+      },
+      "inline_response_200": {
+        "type": "object",
+        "properties": {
+          "rc": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+#### Example 2:  Swagger API definition (or equivalent) a the DID Agent: Alternate
+```json
+{
+    "endpoints": [
+        {
+            "address": "http://localhost:8081/SendNFEEnvelopeToStorage/",
+            "requestType": "json",
+            "requestParameters": [
+                "sealedEnvelope"
+            ],
+            "responseType": "json",
+            "responseParameters": [
+                "rc"
+            ]
+        }
+    ]
+}
+```
 
 #### Update Commands (^ Update (Merge) Operator)
 
-- Enter `^did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to update DID Document with multiple serviceEndpoints (implementing a new DID Agent Cluster) - each preconfigured with a default DID Agent implementation as well as pre-deleting the DID Document if it already exists.
-- Enter `^^^^did:<method name>:<idstring> "Name1"="Value1" ...` to update one or more named properties from a DID Object[1].
+- Enter `^did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` to add a new serviceEndpoint to an existing DID DOcument associated with the DID Identifier - fails if a DID Document associated with this DID Identifier doesn't exist
+- Enter `^^did:<method name>:<idstring> type=clustered,roundrobin,BlueToque.Agent agents=<N>` redeploy a DID Agent(s) to the DID Agent Host associated with the serviceEndpoint in an existing DID DOcument associated with the DID Identifier - fails if a DID Document associated with this DID Identifier doesn't exist or the designated serverEndpoint does't exist in the DID Document
+- Enter `^^^did:<method name>:<idstring> "Name1"="Value1" ...` to add or update one or more named properties (claims) in a DID Object[1].
 
 #### Delete Commands (- Remove Operator)
 
 - Enter `-did:<method name>` to deregister a new DID Method name - fails if the DID Method namespace contains existing
 DID Documents, DID Agents, or DID Objects.
 - Enter `-did:<method name>:<idstring>` to delete an existing DID Document and an associated DID Agent and DID Object (Structured Credentials) (aka DID Chain), if they exist
-- Enter `--did:<method name>:<idstring>` to delete an existing DID Agent (Structured Credential) and associated DID Object, if they exist.
-- Enter `---did:<method name>:<idstring>` to delete from DID Storage an existing DID Object (Structure Credential) - including all contained properties.
-- Enter `----did:<method name>:<idstring> "Name1" ...` to delete one or more named properties from an existing DID Object[1]. 
+- Enter `--did:<method name>:<idstring>  type=clustered,roundrobin,BlueToque.Agent agents=<N>` to uninstall an existing DID Agent from the DID Agent Host associated with the serviceEndpoint in the DID object associated DID Object, if they exist.
+- Enter `---did:<method name>:<idstring>` to delete from DID Storage an existing DID Object (the entire DID Object) - including all contained named properties (claims).
+- Enter `---did:<method name>:<idstring> "Name1" ...` to delete one or more named properties (claims) from an existing DID Object[1]. 
 
 #### Advanced Commands (Coercion Operator)
 
