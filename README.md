@@ -16,6 +16,8 @@ the BlueToque family of Fully Decentralized Object (FDO) Framework specification
 
 `didlang` is a new interpreted, command line language for working with DID Method Namespaces, DID Identifiers, DID Documents, DID Agent Service Endpoints, DID Agent Servers, DID Agent Clusters, and DID Objects (the _7 DIDs_).
 
+Video tutorial: [#didlang 0.3 Interpreter for DID Identifiers, DID Documents, DID Agent Clusters, and DID Objects](https://www.youtube.com/watch?v=mf0aKLvJoCw&list=PLU-rWqHm5p45RKAAF8bleTuPNI5cBE3gP&index=1)
+
 ### didlang Conceptual Model
 
 ![didlang Conceptual Model](images/didlang%20Conceptual%20Model%200.2.png)
